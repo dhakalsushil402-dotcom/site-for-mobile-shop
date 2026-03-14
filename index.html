@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <style>
+
+    </style>
+
+    <nav class="navbar sticky-top">
+        <div class="logo"><img src="./logo-footer.png" alt="" class="img-fluid "></div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Categories <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-col">
+                            <h4>Smartphones</h4>
+                            <a href="#">Samsung</a>
+                            <a href="#">iPhone</a>
+                            <a href="#">OnePlus</a>
+                            <a href="#">Realme</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <h4>Accessories</h4>
+                            <a href="#">Headphones</a>
+                            <a href="#">Chargers</a>
+                            <a href="#">Covers</a>
+                            <a href="#">Smartwatches</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-bars menu-toggle"></i>
+        </div>
+    </nav>
+    <!--=======================================================================================================================================================
+    ===================================================================hero section start here===================================================================
+    ====================================================================================================================================================--->
+
+    <style>
+        .herosection {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .herosection .container {
+            position: relative;
+            background: url(./herosectionbg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            /* filter: blur(1px); */
+            background-color: rgba(255, 255, 255, 0.3);
+
+        }
+
+        .herocontent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .herosection .img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+
+        .herosection .herotext {
+            padding: 20px;
+        }
+
+        .herosection .herotext h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 100%;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+
+        .herosection .herotext h1 span {
+            color: #0d6efd;
+            font-weight: 700;
+            -webkit-text-stroke: 0.2px #022554;
+            font-size: 4rem;
+        }
+
+        .herosection .herotext p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #f8f9fa;
+            margin-bottom: 30px;
+        }
+
+        .herosection .herotext .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .videobtn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .videobtn i {
+            font-size: 1.9rem;
+            position: relative;
+            color: #f8f9fa;
+            top: 0%;
+            left: 5%;
+            background-color: #006FFF;
+            border-radius: 50px;
+            padding: 13px 13px;
+        }
+
+        .heroimg,
+        .heroimg1,
+        .heroimg2 {
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+
+
+    <div class="herosection">
+        <div class="container">
+            <div class="row">
+                <div class="herocontent">
+                    <div class="col-12 col-md-6 herotext herosection-content mt-0 mt-md-5 ms-4">
+                        <h1 class="text-capitalize mt-0 mt-md-5">get best <span class="ms-4">device <br>with</span> low
+                            prices</h1>
+                        <p class="mt-4">Your one-stop destination for the latest and greatest mobile phones and
+                            accessories.
+                            Explore our
+                            wide range of products and find the perfect device to suit your needs.</p>
+                        <div class="herobtn ms-4 mt-5">
+                            <button id="primary_button" class="btn-primary rounded-5 px-5 p-3">Shop Now</button>
+                            <a href="##" class="videobtn ms-1">
+                                <i class="bi bi-fast-forward-btn-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img col-12 col-md-6 mt-0 mt-md-4">
+                        <img src="./slide1-1.png" alt="" class="img-fluid heroimg">
+                        <img src="./slide2-1.png" alt="" class="img-fluid heroimg1 d-none">
+                        <img src="./slide3-1.png" alt="" class="img-fluid heroimg2 d-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const heroimg = document.querySelector('.heroimg');
+        const heroimg1 = document.querySelector('.heroimg1');
+        const heroimg2 = document.querySelector('.heroimg2');
+        let px = 0;
+        function changeimage() {
+            px += 2;
+            (setTimeout(() => {
+                heroimg.classList.remove('d-none');
+                heroimg1.classList.add('d-none');
+                heroimg2.classList.add('d-none');
+            }, 3000));
+            setTimeout(() => {
+                heroimg.classList.add('d-none');
+                heroimg1.classList.remove('d-none');
+                heroimg2.classList.add('d-none');
+            }, 6000);
+            setTimeout(() => {
+                heroimg1.classList.add('d-none');
+                heroimg2.classList.remove('d-none');
+                heroimg.classList.add("d-none");
+            }, 9000);
+            setTimeout(() => {
+                changeimage();
+            }, 12000);
+        }
+        changeimage();
+    </script>
+    <!--===============================================================================================================================================
+===============================================================hero section end here===============================================================
+=================================================================================================================================================== -->
+    <style>
+        /* Hero Section */
+        .hero {
+            background: url('hero-bg.jpg') center/cover no-repeat;
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .categories-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category-card {
+            width: 190px;
+            background: #f8f8f8;
+            border-radius: 60px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card img {
+            width: 100%;
+            border-radius: 60px;
+        }
+
+        .category-card h3 {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #333;
+            height: 30px;
+            width: auto;
+            border-radius: 60px;
+            background-color: #ffffff;
+            box-shadow: 4px 4px 4px #c0b9b9;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="categories-container gap-4">
+            <div class="category-card">
+                <img src="./sectionA.jpg" alt="Shoes">
+                <h3>watch</h3>
+            </div>
+            <div class="category-card">
+                <img src="./sectionA2.jpg" alt="Shoes">
+                <h3>watch</h3>
+            </div>
+            <div class="category-card">
+                <img src="./sectionA3.jpg" alt="Shoes">
+                <h3>Tablet</h3>
+            </div>
+            <div class="category-card">
+                <img src="./sectionA4.jpg" alt="Shoes">
+                <h3>watch</h3>
+            </div>
+            <div class="category-card">
+                <img src="./sectionA5.jpg" alt="Shoes">
+                <h3>Tablet</h3>
+            </div>
+        </div>
+    </section>
+    <!-- ======================================================================================================================================================
+===================================================================section-end-here===============================================================
+====================================================================================================================================================== -->
+    <style>
+        section .container {
+            background-color: #0d6efd;
+            width: auto;
+            height: 530px;
+            border-radius: 30px;
+        }
+
+        section .container h2,
+        p {
+            color: #f8f9fa;
+        }
+
+        section .container a {
+            background-color: #f8f9fa;
+        }
+
+        section .container img {
+            height: 450px;
+            width: auto;
+        }
+    </style>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <section>
+                    <div class="container ps-5">
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <h2 class="mt-5">Lorem, ipsum dolor.</h2>
+                                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, vero.
+                                    Lorem ipsum
+                                    dolor sit amet consectetur adipisicing elit. Alias laudantium amet libero.</p>
+                                <a href="" class="btn rounded-pill mt-5"> Lorem, ipsum.</a>
+                            </div>
+                            <div class="img col-6 mt-5">
+                                <img src="" alt=" image" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-12 col-md-6">
+                <section>
+                    <div class="container ps-5" style="background-color: #022554;">
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <h2 class="mt-5">Lorem, ipsum dolor.</h2>
+                                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, vero.
+                                    Lorem ipsum
+                                    dolor sit amet consectetur adipisicing elit. Alias laudantium amet libero.</p>
+                                <a href="" class="btn rounded-pill mt-5"> Lorem, ipsum.</a>
+                            </div>
+                            <div class="img col-6 mt-5">
+                                <img src="" alt=" image" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!--======================================================================================================================================================
+===================================================================section-end-here===============================================================
+====================================================================================================================================================== -->
+    <style>
+        .card {
+            width: 230px;
+            height: 350px;
+            border-radius: 10%;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cartbtn {
+            display: none;
+            position: relative;
+            bottom: 70%;
+            left: 6.5%;
+            transform: translateY(10px);
+        }
+
+        .cartbtn:hover {
+            display: block;
+        }
+
+        .card img {
+            background-color: #022554;
+            width: 350px;
+            border-radius: 10%;
+            height: auto;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            /* move up */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover .cartbtn {
+            display: block;
+        }
+
+        .card h5 {
+            color: #022554;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card:hover h5 {
+            color: #006FFF;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #022554;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card:hover .price {
+            color: #006FFF;
+        }
+
+        .card small {
+            color: #022554;
+        }
+
+        .card:hover small {
+            color: #006FFF;
+        }
+
+
+        /* Button */
+        .buy-btn {
+            background: linear-gradient(135deg, #0071e3, #005bb5);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(135deg, #005bb5, #003c80);
+            transform: scale(1.05);
+        }
+
+
+        .message {
+            background-color: #006FFF;
+            color: #022554;
+            position: relative;
+            bottom: 30%;
+            left: 0%;
+        }
+    </style>
+
+    <div class="shopingarea">
+        <div class="container">
+            <div class="row gap-5 ms-5 mt-5">
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+                <div class="card mt-5 col-4">
+                    <div class="img mt-2">
+                        <img src="./watch-1-1-600x600.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="contant ms-2 mt-3">
+                        <h5 class="fw-bold">chrome watch</h5>
+                        <small>table</small><br>
+                        <div class="price">$999</div>
+                    </div>
+                    <div class="cartbtn">
+                        <a href="" class="cart_button btn btn-primary p-3 px-5 rounded-5"> add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--============================================================================================================================================
+===================================================================sells-end-here===============================================================
+================================================================================================================================================ -->
+
+    <style>
+        .secondary-herosection .container {
+            background: url(./360_F_753208233_2tFjybdyLCTU12MEJfguSJKBtl0sG5pj.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 90vh;
+        }
+
+        .secondary-herosection h2 {
+            color: #0088FF;
+            font-size: 50px;
+        }
+
+        .secondary-herosection span {
+            color: #ffffff;
+        }
+
+        .secondary-herosection p {
+            color: #eee9e9;
+        }
+    </style>
+    <div class="secondary-herosection mt-5">
+        <div class="container mt-5 rounded-5">
+            <div class="row">
+                <div class="contant col-12 col-md-6 mt-5 ps-5">
+                    <p class="mt-5 text-white text-capitalize">deal of the day</p>
+                    <h2 class="fw-bold">get <span>virtual reality</span> with 30% off</h2>
+                    <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quaerat qui
+                        reiciendis nam necessitatibus tenetur? Soluta fugit similique magni ea. Lorem ipsum, dolor sit
+                        amet consectetur adipisicing elit. Odit alias cumque adipisci, doloribus provident ipsum.</p>
+                    <a href="##" class="btn btn-primary px-5 py-3 rounded-5 ms-5">get 30% off</a>
+                </div>
+                <div class="div col-12 col-md-6 mt-2">
+                    <img src="./img1-1.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================================================================================================================================================
+<!-- footer section start here -->
+    <!-- ==================================================================================================================================================== -->
+    <style>
+        footer {
+            background-color: #003c80;
+            align-items: center;
+        }
+
+        h6 {}
+    </style>
+    <footer class="mt-5 rounded-top-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h6 class="fs-3 ms-5 mt-5 pt-2 text-white">
+                        about us
+                    </h6>
+                    <p class="fs-6 fw-bold">Lorem ipsum dolor sit amet consectetur adipisi
+                        cing elit. Accusamus tenetur iusto sint quia omnis
+                        maxime. Reprehenderit porro aspernatur fuga est! L
+                        orem ipsum dolor sit amet consectetur adipisicing
+                        elit. Voluptatibus culpa iste, odio numquam accusa
+                        mus placeat perferendis inventore cumque non itaque.</p>
+                        <h6 class="fs-3 text-white">
+                        thank for visiting
+                    </h6>
+                </div>
+                <div class="col-6 text-white mt-5">
+                    <h6 class="fs-3 text-white">
+                        contact us 
+                    </h6>
+                    <div class="iocn d-flex flex-col gap-4 fs-3">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-tiktok"></i>
+                        <i class="bi bi-youtube"></i>
+                    </div>
+                    <h6>special thank to our costumer</h6>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, fugiat!</p>
+                </div>
+            </div>
+            <div class="aboutus text-white">
+                <div> gmail : sushildhakal2020@gmail.com</div>
+                <div class="contactnum">contact num : 98************</div>
+                <div class="contact">tik tok : sushil dhakal</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="./file.js"></script>
+
+    <script src="https://kit.fontawesome.com/a2e0c2f3d1.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
